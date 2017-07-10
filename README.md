@@ -1,9 +1,7 @@
 # Geom3D
 
-A little repo in response to the fact that there is no good C# library for doing even basic computational geometry library and/or 3D math. 
-
-There is one called Math.Net Numerics along with Math.Net Spatial that will get you vectors and matrices but not with all 
-the convenience routines you’d expect to treat vectors like 3D points and so forth. 
+A little repo in response to the fact that there is no good library for doing even basic computational geometry and/or 3D math in C#. There is a nuget library available called Math.Net Numerics along with Math.Net Spatial that will get you vectors and matrices
+but not with all the convenience routines you’d expect to treat vectors like 3D points and so forth. 
 
 To this end this rwpo is merely what you get by extracting the vectors and matrices out of monogame and search-and-replacing 
 “float” to “double” to get double precision. 
