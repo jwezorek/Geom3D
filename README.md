@@ -7,8 +7,10 @@ To this end this rwpo is merely what you get by extracting the vectors and matri
 “float” to “double” to get double precision. 
 
 I also included in here 
+
   * 3D line segment/line segment intersection code and 
   * 3D triangle/triangle intersection code 
+  
 which I transliterated to C#. 
 
 The line segment intersection code came from [Paul Bourke’s web site](http://paulbourke.net/geometry/pointlineplane/#i2l). The triangle intersection code came from running [T
