@@ -48,6 +48,16 @@ namespace Geom3D
             return p1 + offset;
         }
 
+        public static Vector3? LineLineIntersect(Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4, double epsilon)
+        {
+            Vector3 pa = Vector3.Zero, pb = Vector3.Zero;
+            double mua = 0, mub = 0;
+            if (LineLineIntersect(p1, p2, p3, p4, epsilon, ref pa, ref pb, ref mua, ref mub))
+                return (pa + pb) / 2.0;
+            else
+                return null;
+        }
+
         public static bool LineLineIntersect(Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4, double epsilon, ref Vector3 pa, ref Vector3 pb, ref double mua, ref double mub)
         {
             Vector3 p13 = new Vector3(), p43 = new Vector3(), p21 = new Vector3();
@@ -283,6 +293,12 @@ namespace Geom3D
                        new double[] { u1.X, u1.Y, u1.Z },
                        new double[] { u2.X, u2.Y, u2.Z },
                        eps) != 0;
+        }
+
+        public static bool AreCoplanar(Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4)
+        {
+            double value = Vector3.Dot(Vector3.Cross(v2 - v1, v4 - v1), (v3 - v1));
+            return Math.Abs(value) < 0.000000000001;
         }
     }
 }
